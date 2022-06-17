@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+set -vx
+
+bundle install
+
+lefthook install
+
+rspec --init
+
+rubocop --auto-gen-config
